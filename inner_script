@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+echo "Installing system packages"
+apt-get update
+apt-get install -y git build-essential
+
+echo "Installing psych gem version 5"
+gem install psych --version 5.0.2
+
+# Remove Gemfile.lock if present to ensure the latest gem revision is always installed
+rm -rf Gemfile.lock
+echo "Installing Ruby gem"
+bundle install

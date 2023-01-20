@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -eu
+
+docker run -v "$(pwd)":/app -w /app --rm -it ruby:3.1 /app/inner_script
