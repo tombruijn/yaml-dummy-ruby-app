@@ -6,8 +6,10 @@ echo "Installing system packages"
 apt-get update
 apt-get install -y git build-essential
 
-echo "Installing psych gem version 5"
-gem install psych --version 5.0.2
+echo "Update RubyGems"
+gem update --system
+echo "Installing psych gem version 3"
+gem install psych --version 3.3.4
 
 # Remove Gemfile.lock if present to ensure the latest gem revision is always installed
 rm -rf Gemfile.lock
